@@ -1,0 +1,120 @@
+<!--
+⭐Variables named storage for data,we use it to store goodies,visiors and other data.In Js,variables have 3 scopes namely var,let and const
+
+    ➡️let is block scoped.syntax: let var; or let var1='val',var2='val',..... comma first style.If we declare a 2 varibles with same name it will generates an error
+
+    ➡️const is block scoped and cannot be reassigned.syntax: const var='val'; const can't create variables without initializing them.const can't create global this.declaring unchanging variables,Hard-coded values can be defined with const
+
+    ➡️Var is function scoped or global but var and let both let are same old school way. syntax: var var; undefined will result if no value is defined
+
+    It is recommended to use camel case for mutable global variables and uppercase for immutable global variables. Global variables should generally be avoided. When they are necessary, group them under a single namespace object to prevent conflicts.
+
+⭐Variable Rules-
+    🎯A-Z,a-z,0-9,_ (underscore),$ are only allowed to create variables
+    
+    🎯Reserved names like let,const,function,class,if,... can't be used as variables.Be descriptive names but don't overlay words
+
+    🎯Vague variables are avoided like 
+        -Single letter names
+        -generic terms
+        -excessive abbrrevations 
+        -misleading clues
+        -ambigious names
+
+    🎯Camel case(suggested).can't start with digit,non-latin letters allowed,but not recommend.Be stick on to casing whatever you choose to recommended naming
+
+    🎯Variables in Js are case senstive (e.g., myVariable and MyVariable are different)
+
+    🎯casing convention to break words-
+        🏹Camel case (e.g., querySelectorAll,indexOf.getElementId,...) function names can be in camel case.
+        🏹Pascal case(e.g., WhiteLine,ReadLine,GetType,....) class names be descriptive and suggested to use it.It allows HTML form react
+        🏹Snake case (e.g., query_selector_all, index_of, get_element_id,array_push,Mysqli_connect,str_split ...)
+        🏹Screaming snake (e.g., MAX_SIZE, TOTAL_COUNT,MAX_SAFE_INTEGER ...) like constants
+        🏹Kebab case (e.g., query-selector-all, index-of, get-element-id) used for variables or functions,cutomizable,....
+        🏹Private variables like _Privatevar to identify and modern js supports using #prefix access only within class from ES20+ e.g., below
+
+⭐Lazy Programs,never use again use different values for different variables
+
+⭐No datatype before decalring not needed in js.In Js typeof non existing variables are **undefined**
+
+⭐Naming Conventions of variables in any language-
+    =>Boolean Variables like isLoading,hasOwner,isActive,.... may results like actions.No kebab case is suggested here in variables
+    =>Number Variables like totalCount, maxCount, minCount,....
+    =>String Variables like userName, userEmail, userRole,....  
+    =>Function names can be like verbs for e.g., if i am writing a function to get name from user it should be like getName
+-->
+
+
+<!-- var a;
+console.log(a);//undefined -->
+
+
+
+<!-- This code will run and show a button click me if we click js dyanmically increases the count -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Click Counter</title>
+</head>
+<body>
+
+<button id="btn-a">Click me</button>
+<h3 id="heading-a">0 clicks so far</h3>
+
+<script>
+    const btnA = document.querySelector('#btn-a');
+    const headingA = document.querySelector('#heading-a');
+
+    let count = 0;
+
+    btnA.onclick = () => {
+        count++;
+        headingA.textContent = `${count} clicks so far`;
+    };
+</script>
+
+</body>
+</html>
+
+<!--  
+class DogCartoon {
+ constructor(dogName, ownerName) {
+   this.dogName = dogName;
+   this.ownerName = ownerName;
+   this.name = this.#toonName (dogName, ownerName);
+ }
+ 
+// Define a PRIVATE method - only accessible inside this class  #toonName (dogName, ownerName) {
+   return `${dogName} ${ownerName}`;
+ }
+}
+const dogCartoon = new DogCartoon('Scooby-Doo', 'Shaggy');
+
+// good
+// Read the public 'name' property from the objectlet name = dogCartoon.name;
+console.log(name);
+
+// "Scooby-Doo Shaggy"
+// bad
+console.log(dogCartoon.#toonName (‘Scooby-Doo', 'Shaggy'));
+// SyntaxError: Private field '#toonName' must be declared in an enclosing class
+
+-->
+
+
+
+<!-- 
+
+//It is a reacr component to embeded html in js
+
+function DogCartoon(roles)
+{
+return(
+<div>
+<span>DogName:{roles.dogName}</span>
+<span>OwnerName:{roles.ownerName}</span>//Best way to use action+async function
+</div>
+)
+}
+-->
