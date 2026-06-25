@@ -1,6 +1,6 @@
 /**
  
- *Global scope -Acessed from anywhere  
+ *Global scope -Acessed from anywhere
  *Function scope - It can be acessed within a function
  *Block Scope -Variables with let or const inside a block accessible with a block 
 
@@ -41,3 +41,32 @@ console.log(globalConst);
 // console.log(functionVar);//Reference error not defined
 // console.log(functionLet);
 // console.log(functionConst);
+
+/**globalThis using let will cause undefined*/
+
+let globalLet="I am a global using let function";
+var globalvar="I am also global using global function";
+function testgloballet(){
+    console.log(globalLet);
+    console.log(globalvar);
+}
+testgloballet();
+console.log(window.globalLet);
+console.log(window.globalvar);
+console.log(globalThis.globalLet);
+console.log(globalThis.globalvar);
+
+/**
+ * globalThis is object property in js,it points top-level global object.It is introduced in ECMA2020 provide a single,standard way to access the global scope,instead of using window or self(self is a read-only global property that references the current global execution context) node.js uses globalThis */
+
+function Counter() {
+  this.count = 0;
+  var self = this; // Capturing 'this' in a closure
+
+  setInterval(function() {
+    // Inside this regular function, 'this' defaults to the window/undefined
+    // 'self' safely remembers the Counter instance
+    self.count++; 
+    console.log(self.count);
+  }, 1000);
+}
