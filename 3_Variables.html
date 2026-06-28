@@ -1,12 +1,85 @@
 <!--
 ⭐Variables named storage for data,we use it to store goodies,visiors and other data.In Js,variables have 3 scopes namely var,let and const
 
-⭐TDZ for let,const,class start block until code execution reades place where variable is declared and intialized.
+⭐let and const declarations only processed when the current scripts gets processed.If you have 2 scripts <script> elements are running in a chrome within 1 HTML,1st script is not subject to TDZ restrictions for top-level.let or const vars declared in 2nd script,although if you declared a let or const var in 1st script declaring again in 2nd script will cause an error(Redeclaration error)
+
+    🏹Redeclaration-
+        let redeclaration can't be in same scope as any other declarations,including let,const,class,function,var and import,..
+            {
+            let foo;
+            let foo; //syntax error
+            }
+
+            function foo(a){
+            let a=1;//error a is already declared 
+            }
+
+            try{
+            }catch(e){
+            let e;//error
+            }
+
+    🏹Firefox console can't allow REPL(Read Evaluate Print Loop),but chrome allows
+
+        {
+        const a = 1;
+        console.log(a);
+        }
+        {
+        const a = 2; // This won't throw an error in Chrome,where in firefox you will get undefined
+        console.log(a);
+        }
+    
+    🏹Avoid error by putting {} in each case
+        let x=1;
+        switch(x){
+            case 1:
+                { //valid
+                const a = 1;
+                console.log(a);
+                }
+                break;
+            case 2:
+                {
+                const a = 2;
+                console.log(a);
+                }
+                break;
+        }
+        
+        A switch statement has one lexical scope. The case labels are simply jump targets inside that single scope—they are not blocks by themselves.Rule of thumb: When using let or const inside switch cases, it's considered best practice to wrap each case body in {} to avoid scope and redeclaration issues
+        
+        switch(x){
+        case 0:
+            let foo;
+            break;
+        case 2:
+            let foo;
+        }
+
+⭐TDZ for let,const,class start block until code execution reades place where variable is declared and intialized.The variables has not initialized with a value and any attempt access it will result in a ReferenceError(object does not exist in current scope)
+
+⭐Reference Error(out of scope) is different from undefined where variables are not yet to given a value.eg.., let user; console.log(user);// undefined console.log(samplevar);// ReferenceError
+
+    { // TDZ starts
+    const func=()=>
+        console.log(letVar); //ok
+        let letvar=3; //end of TDZ,Reference error
+        func();
+    }
+    
+    {
+    console.log(bar);
+    var bar=1;//if we comment this reference error else i am getting undefined
+    }
+
+    typeof(undefined var); //undefined
 
     ➡️let is block scoped as well as functions.syntax: let var; or let var1='val',var2='val',..... comma first style.
         -If we declare a 2 varibles with same name it will generates an error.let a = 1, b = 2; it called binding list
         -let only accessed after declaration(hoisting) of temporary dead zone(tdz) and also it can't be redeclared by any other declaration within same scope
         -let begin declarations can only appear in places where a statement is allowed because it is not statement i.e.,if(true) let a=1 it is error
+        -let avoid syntacial ambugity issues
 
     ➡️const is block scoped and cannot be reassigned.syntax: const var='val'; const can't create variables without initializing them.const can't create global this.declaring unchanging variables,Hard-coded values can be defined with const
 
