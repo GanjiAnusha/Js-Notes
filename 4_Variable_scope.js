@@ -96,10 +96,10 @@ console.log(globalConst);
 
 /**globalThis using let will cause undefined*/
 
-let globalLet="I am a global using let function";
+let globalLet1="I am a global using let function";
 var globalvar="I am also global using global function";
 function testgloballet(){
-    console.log(globalLet);
+    console.log(globalLet1);
     console.log(globalvar);
 }
 testgloballet();
