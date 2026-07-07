@@ -21,6 +21,7 @@
         
 
 */
+
 //example for dynamic typing
 let myno="500";
 typeof myno; //string
@@ -28,6 +29,20 @@ console.log(typeof myno);
 myno=500;
 typeof myno; //number
 console.log(typeof myno);
+
+//where 0 is integer
+
+null==0//false
+
+null>0//false
+
+null<0//false
+
+null>=true//false
+
+null!=0//true,!== non-Equality operator
+
+typeof(null)//object
 
 /**
     ⭐Snake case strategy(SCS),low letter separated by ___'s(underscores) and lower case (e.g., user_account_id).
