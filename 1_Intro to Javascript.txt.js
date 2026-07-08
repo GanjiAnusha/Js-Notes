@@ -10,7 +10,7 @@
 ⭐Js also supports first class functions(https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function),which means function treated like any other variable,can be any arg or any other function returned by any other function
 
 
-⭐Naming Coonventions for file names 
+⭐Naming Conventions for file names 
     -Apache,unix_case_Sensitive when handling files
     -MS IIS allow case-insensitive file names like hello.js,Hello.js are not same
     -file saving allows kebab case(Recommended),pascal case error for frontend applications
