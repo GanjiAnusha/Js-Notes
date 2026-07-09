@@ -93,7 +93,8 @@ while ((pos1 = str.indexOf(target, pos1 + 1)) != -1) {
 
 
 /**Occurence in reverse order */
-if(str3.indexOf("Widget")){
-    console.log("We found it");
+if(str3.indexOf("widget"))//if we try to alert or console on condition we get 0
+{
+    console.log("We found it");//match found at starting 
 }
 

@@ -18,8 +18,15 @@
 
     ⭐Dynamic typing (conversion)
     
-        
-
+    ⭐Falsy values in JavaScript:
+        ➡️false
+        ➡️0
+        ➡️-0
+        ➡️""
+        ➡️null
+        ➡️undefined
+        ➡️NaN
+        All of these behave like false inside an if condition.
 */
 
 //example for dynamic typing
