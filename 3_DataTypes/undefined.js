@@ -6,4 +6,21 @@
 console.log(a);//undefined
 var a=10;//undefined
 console.log(a);//10
-console.log(x);//not defined --reference error
+// console.log(x);//not defined -- reference error
+
+var b;
+console.log(b);//undefined
+if(b===undefined){
+    console.log("B is undefined");//B is undefined
+}
+else{
+    console.log("B is not defined");
+}
+
+//Js is a loosely typed language(weak language)
+var c;
+console.log(c);
+c=10;
+console.log(c);
+c="test";
+console.log(c);

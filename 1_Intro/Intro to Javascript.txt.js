@@ -1,4 +1,6 @@
 /**
+ * Js is a loosely typed language(weak language)
+ * 
 ⭐ Javascript is one of the core technologies of www along with HTML & CSS.Javascript lets us add interactivity to pages like sliders,  alerts,click interactions,popups,etc.......
 
 ⭐ Apart of using in browser,it is also used in other non-browser enivornments(Adobe Acrobat & GNOME shell,....) as well such as Node.js for writing server-side code in javascript,Electron for writing desktop applications,React Native for mobile apps and soon
