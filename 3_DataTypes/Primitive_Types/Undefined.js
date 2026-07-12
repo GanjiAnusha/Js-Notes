@@ -17,7 +17,7 @@ else{
     console.log("B is not defined");
 }
 
-//Js is a loosely typed language(weak language)
+
 var c;
 console.log(c);
 c=10;
