@@ -63,3 +63,33 @@ let a=[10,15,20];
 console.log(a[0]);     //accessing array of index
 
 
+/** 
+➡️Dynamic and weak typing--- variables are not associated with particular value type and variables can be reassigned
+*/
+
+let foo=42;
+console.log(typeof(foo));//number
+foo = "bar";
+console.log(typeof(foo));//string
+foo =true;
+console.log(typeof(foo));//boolean
+
+// implicit type conversion when an operation involves mismatched types, instead of throwing type errors
+const foo1=42;
+const result=foo1+"1";
+console.log(result);//421
+
+/** 
+⭐All Primitive values except null and undefined have their corresponding object wrapper types
+
+Type	    typeof return value	    Object wrapper
+Null	    "object"	            N/A
+Undefined	"undefined"	            N/A
+Boolean	    "boolean"	            Boolean
+Number	    "number"	            Number
+BigInt	    "bigint"	            BigInt
+String	    "string"	            String
+Symbol	    "symbol"	            Symbol
+
+⭐For ex,Number object provides methods like toExponential(),when property is accessed via object instead,Js auto wraps the val to corresponding wrapper object,However null or undefined throws typeerror,introduction of optional chaning operator(?.)
+ */
