@@ -164,3 +164,21 @@ JSON.rawJSON() writes raw JSON without adding quotes.
 Large JSON numbers lose precision when JSON.parse() converts them to Number.
 The new context.source gives you the original JSON text, allowing you to convert it to BigInt (or another high-precision type) without losing digits.
 */
+
+"use strict";
+let lrgNum=Number.MAX_SAFE_INTEGER;
+let smallNum=Number.MIN_SAFE_INTEGER;
+console.log(lrgNum);//9007199254740991
+console.log(smallNum);//-9007199254740991
+console.log(Number.isSafeInteger(lrgNum));//true
+lrgNum++;
+console.log(lrgNum);//9007199254740992
+console.log(smallNum);//9007199254740991
+console.log(Number.isSafeInteger(lrgNum));//false
+lrgNum++;
+console.log("Incremented one more time",lrgNum);//9007199254740992 even though we incremented twice i am getting same had before
+
+let bigintlrgnum=BigInt(Number.MAX_SAFE_INTEGER);
+console.log(bigintlrgnum);//9007199254740991n
+//even though we do same as the abpve it will inctement 9007199254740993n
+console.log(typeof(bigintlrgnum));//bigint
